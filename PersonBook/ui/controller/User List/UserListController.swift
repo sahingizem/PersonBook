@@ -17,7 +17,6 @@ class UserListController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Setup the tableView and its delegate & data source methods
         setupTableView()
         fetchUsers()
         
@@ -30,7 +29,8 @@ class UserListController: UIViewController {
     }
     
     private func fetchUsers() {
-        viewModel.fetchUsers { success in
+        viewModel.fetchUsers { [weak self] success in
+            guard let self = self else { return }
             // If the fetch is successful, reload the table view on the main thread
             if success {
                 DispatchQueue.main.async {

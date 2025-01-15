@@ -12,7 +12,6 @@ import UIKit
 
 class UserDetailController: UIViewController {
     
-    // The 'user' property will hold the data of the user whose details we want to display
     var user: User?
     
     @IBOutlet weak var stackView: UIStackView!
@@ -28,8 +27,6 @@ class UserDetailController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Calling updateUI when the view is loaded to display the user data
         updateUI()
     }
     
@@ -49,7 +46,6 @@ class UserDetailController: UIViewController {
     }
     
     @IBAction func closeButtonTapped(_ sender: UIButton) {
-          // Close the current modal view controller
           dismiss(animated: true, completion: nil)
       }
 }

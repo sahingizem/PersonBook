@@ -25,6 +25,7 @@
 		FB87CA272D37FDAE005E4215 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB87CA262D37FDAE005E4215 /* NetworkError.swift */; };
 		FB87CA352D386497005E4215 /* UserServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB87CA342D386497005E4215 /* UserServiceTests.swift */; };
 		FB87CA422D3864F2005E4215 /* UserListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB87CA412D3864F2005E4215 /* UserListViewModelTests.swift */; };
+		FB87CA4D2D387196005E4215 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB87CA4C2D387196005E4215 /* UserRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		FB87CA342D386497005E4215 /* UserServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServiceTests.swift; sourceTree = "<group>"; };
 		FB87CA3F2D3864F2005E4215 /* UserListViewModelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UserListViewModelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB87CA412D3864F2005E4215 /* UserListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModelTests.swift; sourceTree = "<group>"; };
+		FB87CA4C2D387196005E4215 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +211,7 @@
 		FB87CA102D37C457005E4215 /* data */ = {
 			isa = PBXGroup;
 			children = (
+				FB87CA4B2D387189005E4215 /* repository */,
 				FB87CA142D37C4B4005E4215 /* model */,
 				FB87CA112D37C45C005E4215 /* service */,
 			);
@@ -272,6 +275,14 @@
 				FB87CA412D3864F2005E4215 /* UserListViewModelTests.swift */,
 			);
 			path = UserListViewModelTests;
+			sourceTree = "<group>";
+		};
+		FB87CA4B2D387189005E4215 /* repository */ = {
+			isa = PBXGroup;
+			children = (
+				FB87CA4C2D387196005E4215 /* UserRepository.swift */,
+			);
+			path = repository;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -465,6 +476,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB87CA4D2D387196005E4215 /* UserRepository.swift in Sources */,
 				FB87CA132D37C470005E4215 /* UserService.swift in Sources */,
 				FB87C9DF2D37C065005E4215 /* UserListController.swift in Sources */,
 				FB87CA1F2D37D54D005E4215 /* UserDetailController.swift in Sources */,

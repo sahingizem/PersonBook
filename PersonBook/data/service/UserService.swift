@@ -7,7 +7,11 @@
 
 import Foundation
 
-class UserService {
+protocol UserServiceProtocol {
+    func fetchUsers(completion: @escaping (Result<[User], NetworkError>) -> Void)
+}
+
+class UserService : UserServiceProtocol {
     
     static let shared = UserService()
     
@@ -21,11 +25,13 @@ class UserService {
         
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             if error != nil {
+                print("Request failed with error: \(String(describing: error?.localizedDescription))")
                 completion(.failure(.requestFailed))
                 return
             }
             
             guard let data = data else {
+                completion(.failure(.invalidResponse))
                 return
             }
             
@@ -33,6 +39,7 @@ class UserService {
                 let users = try JSONDecoder().decode([User].self, from: data)
                 completion(.success(users))
             } catch {
+                print("Decoding error: \(error.localizedDescription)")
                 completion(.failure(.decodingError))
             }
         }
