@@ -11,38 +11,15 @@ protocol UserServiceProtocol {
     func fetchUsers(completion: @escaping (Result<[User], NetworkError>) -> Void)
 }
 
-class UserService : UserServiceProtocol {
+class UserService: UserServiceProtocol {
     
-    static let shared = UserService()
+    private let networkManager: NetworkManagerProtocol
     
-    private init() {}
+    init(networkManager: NetworkManagerProtocol = NetworkManager.shared) {
+        self.networkManager = networkManager
+    }
 
     func fetchUsers(completion: @escaping (Result<[User], NetworkError>) -> Void) {
-        guard let url = URL(string: "https://jsonplaceholder.typicode.com/users") else {
-            completion(.failure(.badURL))
-            return
-        }
-        
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
-            if error != nil {
-                print("Request failed with error: \(String(describing: error?.localizedDescription))")
-                completion(.failure(.requestFailed))
-                return
-            }
-            
-            guard let data = data else {
-                completion(.failure(.invalidResponse))
-                return
-            }
-            
-            do {
-                let users = try JSONDecoder().decode([User].self, from: data)
-                completion(.success(users))
-            } catch {
-                print("Decoding error: \(error.localizedDescription)")
-                completion(.failure(.decodingError))
-            }
-        }
-        task.resume()
+        networkManager.request(url: "https://jsonplaceholder.typicode.com/users", completion: completion)
     }
 }

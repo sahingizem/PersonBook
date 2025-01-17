@@ -15,7 +15,7 @@ class UserRepository: UserRepositoryProtocol {
 
     private let userService: UserServiceProtocol
 
-    init(userService: UserServiceProtocol = UserService.shared) {
+    init(userService: UserServiceProtocol = UserService(networkManager: NetworkManager.shared)) {
         self.userService = userService
     }
 

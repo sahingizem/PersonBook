@@ -26,6 +26,7 @@
 		FB87CA352D386497005E4215 /* UserServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB87CA342D386497005E4215 /* UserServiceTests.swift */; };
 		FB87CA422D3864F2005E4215 /* UserListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB87CA412D3864F2005E4215 /* UserListViewModelTests.swift */; };
 		FB87CA4D2D387196005E4215 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB87CA4C2D387196005E4215 /* UserRepository.swift */; };
+		FB87CA532D3967A5005E4215 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB87CA522D3967A5005E4215 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		FB87CA3F2D3864F2005E4215 /* UserListViewModelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UserListViewModelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB87CA412D3864F2005E4215 /* UserListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModelTests.swift; sourceTree = "<group>"; };
 		FB87CA4C2D387196005E4215 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		FB87CA522D3967A5005E4215 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,9 +213,10 @@
 		FB87CA102D37C457005E4215 /* data */ = {
 			isa = PBXGroup;
 			children = (
+				FB87CA512D396790005E4215 /* manager */,
+				FB87CA112D37C45C005E4215 /* service */,
 				FB87CA4B2D387189005E4215 /* repository */,
 				FB87CA142D37C4B4005E4215 /* model */,
-				FB87CA112D37C45C005E4215 /* service */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -283,6 +286,14 @@
 				FB87CA4C2D387196005E4215 /* UserRepository.swift */,
 			);
 			path = repository;
+			sourceTree = "<group>";
+		};
+		FB87CA512D396790005E4215 /* manager */ = {
+			isa = PBXGroup;
+			children = (
+				FB87CA522D3967A5005E4215 /* NetworkManager.swift */,
+			);
+			path = manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -476,6 +487,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB87CA532D3967A5005E4215 /* NetworkManager.swift in Sources */,
 				FB87CA4D2D387196005E4215 /* UserRepository.swift in Sources */,
 				FB87CA132D37C470005E4215 /* UserService.swift in Sources */,
 				FB87C9DF2D37C065005E4215 /* UserListController.swift in Sources */,
